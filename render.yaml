@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: pointofinterestwebapi
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js -p ${PORT}
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: svc-8c78deba-c9a1-4687-88e6-bb3828b86c86-dml.aws-paris-1.svc.singlestore.com
+      - key: DB_PORT
+        value: 3306
+      - key: DB_NAME
+        value: pointofinterest1
+      - key: DB_USERNAME
+        value: admin
+      - key: DB_PASSWORD
+        value: DarkAngel1
+      - key: ACCES_TOKEN_SECRET
+        value: b934f43e953ac96773eb1814ea83f791d44d8cd80e9b5ebbd9f61185258fd881797ee45aa4ac0d685627e8c278fea5febdfaac9a99d52fb501d4cf4269e0b755
+      - key: SESSION_SECRET_KEY
+        generateValue: true
