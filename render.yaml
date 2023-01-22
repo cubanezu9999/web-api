@@ -6,6 +6,8 @@ services:
     buildCommand: npm install
     startCommand: node server.js -p ${PORT}
     envVars:
+      - key:PORT
+        value: 3000
       - key: NODE_ENV
         value: production
       - key: DB_CONNECTION
